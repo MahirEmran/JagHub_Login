@@ -3,7 +3,6 @@ import 'dart:html';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as prefix;
 import 'user.dart';
-
 import 'events.dart';
 
 class API {
