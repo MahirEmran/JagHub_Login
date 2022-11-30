@@ -29,6 +29,13 @@
             {
               "client_id": "621044417838-s8hlog298mjfnkgq4bg86tg7ro4il21v.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "621044417838-72171t6br2p83ljv6rdnhfcmt71eu3k6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mad2Login"
+              }
             }
           ]
         }
