@@ -1,8 +1,6 @@
-import 'dart:html';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as prefix;
-import 'user.dart';
+import 'user_data.dart';
 import 'events.dart';
 
 class API {
@@ -34,12 +32,12 @@ class API {
   static const String sourceKey = "source";
   static const String typeKey = "type";
 
-  Future<List<User>> getUserList() async {
-    List<User> users = [];
+  Future<List<UserData>> getUserList() async {
+    List<UserData> users = [];
     QuerySnapshot userInfo = await database.collection(usersCollection).get();
     for (QueryDocumentSnapshot user in userInfo.docs) {
       users.add(
-        User(
+        UserData(
           userId: user.id,
           name: user.get(nameKey) as String,
           email: user.get(emailKey) as String,
@@ -55,10 +53,10 @@ class API {
     return users;
   }
 
-  Future<User> getUserData(String id) async {
+  Future<UserData> getUserData(String id) async {
     DocumentSnapshot userInfo =
         await database.collection(usersCollection).doc(id).get();
-    return User(
+    return UserData(
       userId: userInfo.id,
       name: userInfo.get(nameKey) as String,
       email: userInfo.get(emailKey) as String,
@@ -71,7 +69,15 @@ class API {
     );
   }
 
-  Future<void> modifyUserData(String id, User newUserData) async {
+  Future<String> getUserId(String email) async {
+    QuerySnapshot currentUsers = await database
+        .collection(usersCollection)
+        .where(emailKey, isEqualTo: email)
+        .get();
+    return currentUsers.docs[0].id;
+  }
+
+  Future<void> modifyUserData(String id, UserData newUserData) async {
     FirebaseFirestore.instance.collection(usersCollection).doc(id).update({
       nameKey: newUserData.name,
       profilePicKey: newUserData.profilePic,
@@ -82,6 +88,27 @@ class API {
       pastTotalPointsKey: newUserData.pastTotalPoints,
       currentEventsKey: newUserData.currentEvents,
     });
+  }
+
+  Future<bool> doesUserExist(String email) async {
+    QuerySnapshot currentUsers = await database
+        .collection(usersCollection)
+        .where(emailKey, isEqualTo: email)
+        .get();
+    return currentUsers.docs.isEmpty;
+  }
+
+  void addUser(String name, String email, String profilePic) {
+    Map<String, dynamic> userInfo = Map();
+    userInfo[nameKey] = name;
+    userInfo[emailKey] = email;
+    userInfo[profilePicKey] = profilePic;
+    userInfo[currentEventsKey] = [];
+    userInfo[pastEventsKey] = [];
+    userInfo[pointsKey] = 0;
+    userInfo[gradeKey] = 0;
+    userInfo[pastTotalPointsKey] = [];
+    database.collection(usersCollection).add(userInfo);
   }
 
   Future<List<Events>> getEventList() async {
@@ -115,6 +142,6 @@ class API {
     eventInfo[locationKey] = newEvent.location;
     eventInfo[sourceKey] = newEvent.source;
     eventInfo[typeKey] = newEvent.type;
-    database.collection(usersCollection).add(eventInfo);
+    database.collection(eventsCollection).add(eventInfo);
   }
 }

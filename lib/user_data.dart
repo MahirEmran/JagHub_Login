@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 
-class User {
+class UserData {
   late String _userId;
   late String _email;
   late String _profilePic;
@@ -11,7 +11,7 @@ class User {
   late int _grade;
   late List<int> _pastTotalPoints;
 
-  User({
+  UserData({
     required String userId,
     required String email,
     required String profilePic,
