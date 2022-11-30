@@ -15,9 +15,6 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    ).then((value) {});
     return MaterialApp(
       title: 'FlutterFire Samples',
       debugShowCheckedModeBanner: false,

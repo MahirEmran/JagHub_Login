@@ -48,8 +48,18 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
               ),
               FutureBuilder(
+                future: Authentication.initializeFirebase(context: context),
                 builder: (context, snapshot) {
-                  return GoogleSignInButton();
+                  if (snapshot.hasError) {
+                    return Text('Error initializing Firebase');
+                  } else if (snapshot.connectionState == ConnectionState.done) {
+                    return GoogleSignInButton();
+                  }
+                  return CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      Color.fromARGB(255, 235, 141, 17),
+                    ),
+                  );
                 },
               ),
             ],

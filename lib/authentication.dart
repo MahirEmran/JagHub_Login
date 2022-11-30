@@ -8,6 +8,28 @@ import 'package:mad2_login/landing_page.dart';
 import 'package:mad2_login/user_data.dart';
 
 class Authentication {
+  static Future<FirebaseApp> initializeFirebase({
+    required BuildContext context,
+  }) async {
+    FirebaseApp firebaseApp = await Firebase.initializeApp();
+
+    User? user = FirebaseAuth.instance.currentUser;
+
+    if (user != null) {
+      String userId = await API().getUserId(user.email!);
+      UserData currentUser = await API().getUserData(userId);
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => LandingPage(
+            user: currentUser,
+          ),
+        ),
+      );
+    }
+
+    return firebaseApp;
+  }
+
   static Future<void> signOut({required BuildContext context}) async {
     final GoogleSignIn googleSignIn = GoogleSignIn();
 
