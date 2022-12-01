@@ -16,7 +16,7 @@ class API {
   static const String profilePicKey = "profilePic";
   static const String emailKey = "email";
   static const String pointsKey = "points";
-  static const String gradeKey = "grades";
+  static const String gradeKey = "grade";
   static const String pastEventsKey = "pastEvents";
   static const String currentEventsKey = "currentEvents";
   static const String pastTotalPointsKey = "pastTotalPoints";
