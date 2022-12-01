@@ -99,7 +99,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       }
                       return CircularProgressIndicator(
                         valueColor: AlwaysStoppedAnimation<Color>(
-                          Color.fromARGB(255, 0, 126, 255),
+                          Color.fromARGB(255, 255, 255, 255),
                         ),
                       );
                     },

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mad2_login/authentication.dart';
 import 'package:mad2_login/sign_in_screen.dart';
@@ -32,7 +33,7 @@ class _LandingPageScreenState extends State<LandingPage> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Color.fromARGB(255, 111, 1, 142),
-        title: Text("Landing page (placeholder, should be home page!)",
+        title: Text("Landing page (placeholder)",
             style: TextStyle(
                 color: Color.fromARGB(255, 255, 255, 255), fontSize: 16)),
       ),
@@ -47,6 +48,14 @@ class _LandingPageScreenState extends State<LandingPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(),
+              SizedBox(height: 24.0),
+              Text(
+                _user.email + " (This is to verify which account is signed in)",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 0, 0, 0),
+                  fontSize: 16,
+                ),
+              ),
               SizedBox(height: 24.0),
               Text(
                 'You are now signed in using your Google account. To sign out of your account, click the "Sign Out" button below.',

@@ -106,10 +106,42 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
     int dropdownvalue = 0;
     List<DropdownMenuItem<int>> buttons = [];
     buttons.addAll([
-      DropdownMenuItem<int>(value: 9, child: Text("9")),
-      DropdownMenuItem<int>(value: 10, child: Text("10")),
-      DropdownMenuItem<int>(value: 11, child: Text("11")),
-      DropdownMenuItem<int>(value: 12, child: Text("12")),
+      DropdownMenuItem<int>(
+          value: 9,
+          child: Text(
+            "9",
+            style: TextStyle(
+              fontSize: 16,
+              color: Color.fromARGB(255, 0, 0, 0),
+            ),
+          )),
+      DropdownMenuItem<int>(
+          value: 10,
+          child: Text(
+            "10",
+            style: TextStyle(
+              fontSize: 16,
+              color: Color.fromARGB(255, 0, 0, 0),
+            ),
+          )),
+      DropdownMenuItem<int>(
+          value: 11,
+          child: Text(
+            "11",
+            style: TextStyle(
+              fontSize: 16,
+              color: Color.fromARGB(255, 0, 0, 0),
+            ),
+          )),
+      DropdownMenuItem<int>(
+          value: 12,
+          child: Text(
+            "12",
+            style: TextStyle(
+              fontSize: 16,
+              color: Color.fromARGB(255, 0, 0, 0),
+            ),
+          )),
     ]);
 
     bool okPressed = false;
@@ -117,19 +149,52 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text('Hi there!'),
+            backgroundColor: Color.fromARGB(255, 255, 255, 255),
+            title: Text(
+              'Hi there!',
+              style: TextStyle(
+                fontSize: 28,
+                color: Color.fromARGB(255, 0, 0, 0),
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             content: SingleChildScrollView(
               child: SizedBox(
                 width: 240,
-                child: DropdownButtonFormField<int>(
-                  hint: Text('Grade Level'),
-                  items: buttons,
-                  icon: const Icon(Icons.keyboard_arrow_down),
-                  onChanged: (newValue) {
-                    setState(() {
-                      dropdownvalue = newValue as int;
-                    });
-                  },
+                child: Column(
+                  children: [
+                    Text(
+                      'You seem new to this app. To finish making your account, input your grade level below!',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Color.fromARGB(255, 0, 0, 0),
+                        fontFamily: 'Montserrat',
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    DropdownButtonFormField<int>(
+                      dropdownColor: Color.fromARGB(255, 255, 255, 255),
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                      hint: Text(
+                        'Grade Level',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Color.fromARGB(255, 0, 0, 0),
+                        ),
+                      ),
+                      items: buttons,
+                      icon: Icon(Icons.arrow_drop_down,
+                          color: Color.fromARGB(255, 0, 0, 0)),
+                      onChanged: (newValue) {
+                        setState(() {
+                          dropdownvalue = newValue as int;
+                        });
+                      },
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -142,7 +207,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                       style: TextButton.styleFrom(
                         foregroundColor: Colors.white,
                         elevation: 2,
-                        backgroundColor: Colors.green,
+                        backgroundColor: Color.fromARGB(255, 76, 56, 239),
                       ),
                       child: Text('Set'),
                       onPressed: () {
