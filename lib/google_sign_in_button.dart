@@ -89,7 +89,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                         'Sign in with Google',
                         style: TextStyle(
                           fontSize: 20,
-                          color: Color.fromARGB(200, 0, 0, 0),
+                          color: Color.fromARGB(255, 0, 0, 0),
                           fontWeight: FontWeight.w600,
                           fontFamily: 'Montserrat',
                         ),
