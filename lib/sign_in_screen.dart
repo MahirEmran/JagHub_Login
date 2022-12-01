@@ -12,37 +12,39 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 0, 0),
+      backgroundColor: Color.fromARGB(
+        255,
+        76,
+        56,
+        239,
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(
-            left: 16.0,
-            right: 16.0,
+            left: 20.0,
+            right: 20.0,
             bottom: 20.0,
           ),
           child: Column(
             mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(),
               Expanded(
                 child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(height: 20),
+                    SizedBox(height: 15),
                     Text(
-                      'FlutterFire',
+                      'Welcome',
                       style: TextStyle(
-                        color: Color.fromARGB(255, 216, 151, 0),
-                        fontSize: 40,
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        fontSize: 50,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.0,
                       ),
-                    ),
-                    Text(
-                      'Authentication',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 255, 119, 0),
-                        fontSize: 40,
-                      ),
+                      textScaleFactor: 1.25,
                     ),
                   ],
                 ),
@@ -57,11 +59,12 @@ class _SignInScreenState extends State<SignInScreen> {
                   }
                   return CircularProgressIndicator(
                     valueColor: AlwaysStoppedAnimation<Color>(
-                      Color.fromARGB(255, 235, 141, 17),
+                      Color.fromARGB(255, 0, 126, 255),
                     ),
                   );
                 },
               ),
+              SizedBox(height: 50),
             ],
           ),
         ),

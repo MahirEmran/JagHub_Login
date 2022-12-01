@@ -28,7 +28,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                 backgroundColor: MaterialStateProperty.all(Colors.white),
                 shape: MaterialStateProperty.all(
                   RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40),
+                    borderRadius: BorderRadius.circular(30),
                   ),
                 ),
               ),
@@ -77,6 +77,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Image(
                       image: AssetImage("assets/google_logo.png"),
@@ -88,8 +89,9 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                         'Sign in with Google',
                         style: TextStyle(
                           fontSize: 20,
-                          color: Colors.black54,
+                          color: Color.fromARGB(200, 0, 0, 0),
                           fontWeight: FontWeight.w600,
+                          fontFamily: 'Montserrat',
                         ),
                       ),
                     )
