@@ -49,7 +49,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                   _isSigningIn = false;
                 });
 
-                if (userExists) {
+                if (!userExists) {
                   String userId = await API().getUserId(email);
                   UserData userData = await API().getUserData(userId);
                   Navigator.of(context).pushReplacement(
@@ -60,9 +60,8 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                     ),
                   );
                 } else {
-                  API().addUser(user.displayName!, email, user.photoURL!);
-                  String userId = await API().getUserId(email);
-                  _inputGradeDialog(context, userId);
+                  await _inputGradeDialog(context, user);
+                  String userId = await API().getUserId(user.email!);
                   UserData userData = await API().getUserData(userId);
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
@@ -101,7 +100,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
     );
   }
 
-  Future<void> _inputGradeDialog(BuildContext context, String userId) async {
+  Future<void> _inputGradeDialog(BuildContext context, User user) async {
     int dropdownvalue = 0;
     List<DropdownMenuItem<int>> buttons = [];
     buttons.addAll([
@@ -135,19 +134,8 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
             actions: <Widget>[
               Center(
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    TextButton(
-                      style: TextButton.styleFrom(
-                        foregroundColor: Colors.white,
-                        elevation: 2,
-                        backgroundColor: Colors.red,
-                      ),
-                      child: Text('Cancel'),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                    ),
                     TextButton(
                       style: TextButton.styleFrom(
                         foregroundColor: Colors.white,
@@ -172,21 +160,22 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
         dropdownvalue = 0;
         return;
       }
-
+      API().addUser(user.displayName!, user.email!, user.photoURL!);
+      String userId = await API().getUserId(user.email!);
       UserData currentUser = await API().getUserData(userId);
-
+      UserData modifiedUser = UserData(
+          userId: userId,
+          email: currentUser.email,
+          profilePic: currentUser.profilePic,
+          name: currentUser.name,
+          currentEvents: currentUser.currentEvents,
+          pastEvents: currentUser.pastEvents,
+          points: currentUser.points,
+          grade: dropdownvalue,
+          pastTotalPoints: currentUser.pastTotalPoints);
       API().modifyUserData(
         userId,
-        UserData(
-            userId: userId,
-            email: currentUser.email,
-            profilePic: currentUser.profilePic,
-            name: currentUser.name,
-            currentEvents: currentUser.currentEvents,
-            pastEvents: currentUser.pastEvents,
-            points: currentUser.points,
-            grade: dropdownvalue,
-            pastTotalPoints: currentUser.pastTotalPoints),
+        modifiedUser,
       );
 
       setState(() {});

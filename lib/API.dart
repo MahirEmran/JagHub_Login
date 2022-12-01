@@ -61,9 +61,9 @@ class API {
       name: userInfo.get(nameKey) as String,
       email: userInfo.get(emailKey) as String,
       profilePic: userInfo.get(profilePicKey) as String,
-      currentEvents: userInfo.get(currentEventsKey) as List<String>,
-      pastEvents: userInfo.get(pastEventsKey) as List<String>,
-      pastTotalPoints: userInfo.get(pastTotalPointsKey) as List<int>,
+      currentEvents: (userInfo.get(currentEventsKey) as List).cast<String>(),
+      pastEvents: (userInfo.get(pastEventsKey) as List).cast<String>(),
+      pastTotalPoints: (userInfo.get(pastTotalPointsKey) as List).cast<int>(),
       points: userInfo.get(pointsKey) as int,
       grade: userInfo.get(gradeKey) as int,
     );

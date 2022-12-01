@@ -7,11 +7,15 @@ import 'package:mad2_login/API.dart';
 import 'package:mad2_login/landing_page.dart';
 import 'package:mad2_login/user_data.dart';
 
+import 'firebase_options.dart';
+
 class Authentication {
   static Future<FirebaseApp> initializeFirebase({
     required BuildContext context,
   }) async {
-    FirebaseApp firebaseApp = await Firebase.initializeApp();
+    FirebaseApp firebaseApp = await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
 
     User? user = FirebaseAuth.instance.currentUser;
 
