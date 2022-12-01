@@ -33,7 +33,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    SizedBox(height: 10),
+                    SizedBox(height: 5),
                     Text(
                       'Welcome',
                       textAlign: TextAlign.left,
@@ -51,7 +51,7 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
               Image(
                 image: AssetImage("assets/signinscreendesign.png"),
-                height: 250.0,
+                height: 200.0,
               ),
               Align(
                 alignment: Alignment.topLeft,
