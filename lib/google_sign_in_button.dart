@@ -81,17 +81,17 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                   children: <Widget>[
                     Image(
                       image: AssetImage("assets/google_logo.png"),
-                      height: 35.0,
+                      height: 30.0,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 10),
                       child: Text(
                         'Sign in with Google',
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 18,
                           color: Color.fromARGB(255, 0, 0, 0),
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'Montserrat',
+                          fontFamily: 'Rubik_bold',
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                     )
@@ -155,7 +155,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
               style: TextStyle(
                 fontSize: 28,
                 color: Color.fromARGB(255, 0, 0, 0),
-                fontFamily: 'Montserrat',
+                fontFamily: 'Rubik_bold',
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -169,7 +169,6 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                       style: TextStyle(
                         fontSize: 20,
                         color: Color.fromARGB(255, 0, 0, 0),
-                        fontFamily: 'Montserrat',
                       ),
                     ),
                     SizedBox(height: 20),

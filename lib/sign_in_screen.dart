@@ -33,35 +33,34 @@ class _SignInScreenState extends State<SignInScreen> {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    SizedBox(height: 5),
+                    SizedBox(height: 10),
                     Text(
                       'MAD 2.0',
                       style: TextStyle(
                         color: Color.fromARGB(255, 255, 255, 255),
-                        fontSize: 35,
+                        fontSize: 40,
+                        fontFamily: 'Rubik_bold',
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 0.7,
+                      ),
+                      textAlign: TextAlign.center,
+                      textScaleFactor: 1.25,
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'The app for tracking your club attendance and points earned',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 199, 198, 198),
+                        fontSize: 20,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.bold,
-                        letterSpacing: 0.7,
                       ),
                       textScaleFactor: 1.25,
                     ),
                   ],
                 ),
               ),
-              Align(
-                  alignment: Alignment.topCenter,
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(25.0, 0, 0, 0),
-                    child: Text(
-                      'The app for tracking your club attendance and points earned',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 199, 198, 198),
-                        fontSize: 20,
-                        fontFamily: 'Montserrat',
-                      ),
-                      textScaleFactor: 1.25,
-                    ),
-                  )),
               Expanded(
                 child: Image(
                   image: AssetImage("assets/signinscreendesign.png"),

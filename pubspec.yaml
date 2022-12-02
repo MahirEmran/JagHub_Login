@@ -60,9 +60,12 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   fonts:
-    - family: Montserrat     
+    - family: Montserrat
       fonts:
-        - asset: assets/Montserrat.ttf
+        - asset: assets/Montserrat.ttf     
+    - family: Rubik_bold
+      fonts:
+        - asset: assets/Rubik-bold.ttf
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
