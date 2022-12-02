@@ -29,62 +29,44 @@ class _SignInScreenState extends State<SignInScreen> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Align(
-                alignment: Alignment.topLeft,
+                alignment: Alignment.topCenter,
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     SizedBox(height: 5),
                     Text(
-                      'Welcome',
-                      textAlign: TextAlign.left,
+                      'MAD 2.0',
                       style: TextStyle(
                         color: Color.fromARGB(255, 255, 255, 255),
-                        fontSize: 45,
+                        fontSize: 35,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.bold,
-                        letterSpacing: 1.0,
+                        letterSpacing: 0.7,
                       ),
                       textScaleFactor: 1.25,
                     ),
                   ],
                 ),
               ),
-              Image(
-                image: AssetImage("assets/signinscreendesign.png"),
-                height: 200.0,
-              ),
               Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(25.0, 0, 0, 0),
-                  child: Text(
-                    'MAD 2.0',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 35,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 0.7,
-                    ),
-                    textScaleFactor: 1.25,
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Align(
-                    alignment: Alignment.topLeft,
-                    child: Padding(
-                      padding: EdgeInsets.fromLTRB(25.0, 0, 0, 0),
-                      child: Text(
-                        'The app for tracking your club attendance and points earned',
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 199, 198, 198),
-                          fontSize: 20,
-                          fontFamily: 'Montserrat',
-                        ),
-                        textScaleFactor: 1.25,
+                  alignment: Alignment.topCenter,
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(25.0, 0, 0, 0),
+                    child: Text(
+                      'The app for tracking your club attendance and points earned',
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 199, 198, 198),
+                        fontSize: 20,
+                        fontFamily: 'Montserrat',
                       ),
-                    )),
+                      textScaleFactor: 1.25,
+                    ),
+                  )),
+              Expanded(
+                child: Image(
+                  image: AssetImage("assets/signinscreendesign.png"),
+                  height: 200.0,
+                ),
               ),
               Align(
                   alignment: Alignment.bottomCenter,
