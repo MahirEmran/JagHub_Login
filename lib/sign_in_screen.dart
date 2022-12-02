@@ -46,45 +46,46 @@ class _SignInScreenState extends State<SignInScreen> {
                       textAlign: TextAlign.center,
                       textScaleFactor: 1.25,
                     ),
-                    SizedBox(height: 10),
                     Text(
                       'The app for tracking your club attendance and points earned',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: Color.fromARGB(255, 199, 198, 198),
+                        color: Color.fromARGB(255, 255, 255, 255),
                         fontSize: 20,
                         fontFamily: 'Montserrat',
                         fontWeight: FontWeight.bold,
                       ),
                       textScaleFactor: 1.25,
                     ),
+                    SizedBox(height: 10),
                   ],
                 ),
               ),
-              Expanded(
-                child: Image(
-                  image: AssetImage("assets/signinscreendesign.png"),
-                  height: 200.0,
-                ),
+              Image(
+                image: AssetImage("assets/signinscreendesign.png"),
+                height: 250.0,
               ),
-              Align(
-                  alignment: Alignment.bottomCenter,
-                  child: (FutureBuilder(
-                    future: Authentication.initializeFirebase(context: context),
-                    builder: (context, snapshot) {
-                      if (snapshot.hasError) {
-                        return Text('Error initializing Firebase');
-                      } else if (snapshot.connectionState ==
-                          ConnectionState.done) {
-                        return GoogleSignInButton();
-                      }
-                      return CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          Color.fromARGB(255, 255, 255, 255),
-                        ),
-                      );
-                    },
-                  ))),
+              Expanded(
+                child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: (FutureBuilder(
+                      future:
+                          Authentication.initializeFirebase(context: context),
+                      builder: (context, snapshot) {
+                        if (snapshot.hasError) {
+                          return Text('Error initializing Firebase');
+                        } else if (snapshot.connectionState ==
+                            ConnectionState.done) {
+                          return GoogleSignInButton();
+                        }
+                        return CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            Color.fromARGB(255, 255, 255, 255),
+                          ),
+                        );
+                      },
+                    ))),
+              ),
               SizedBox(height: 25),
             ],
           ),
