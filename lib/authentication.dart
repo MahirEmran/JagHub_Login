@@ -20,13 +20,9 @@ class Authentication {
     User? user = FirebaseAuth.instance.currentUser;
 
     if (user != null) {
-      String userId = await API().getUserId(user.email!);
-      UserData currentUser = await API().getUserData(userId);
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => LandingPage(
-            user: currentUser,
-          ),
+          builder: (context) => LandingPage(),
         ),
       );
     }

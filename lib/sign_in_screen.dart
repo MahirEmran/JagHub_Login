@@ -63,7 +63,7 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
               Image(
                 image: AssetImage("assets/signinscreendesign.png"),
-                height: 250.0,
+                height: 200.0,
               ),
               Expanded(
                 child: Align(

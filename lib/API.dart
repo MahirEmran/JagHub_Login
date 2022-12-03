@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as prefix;
+import 'package:firebase_auth/firebase_auth.dart';
 import 'user_data.dart';
 import 'events.dart';
 
@@ -68,6 +69,25 @@ class API {
       grade: userInfo.get(gradeKey) as int,
     );
   }
+
+  Future<UserData> getCurrentUserData() async {
+    User? user = FirebaseAuth.instance.currentUser;
+    String email = user!.email!;
+    String userId = await getUserId(email);
+    return await getUserData(userId);
+  }
+
+  UserData currentUser = UserData(
+    currentEvents: [],
+    pastEvents: [],
+    pastTotalPoints: [],
+    name: "",
+    email: "",
+    points: 0,
+    grade: 0,
+    profilePic: "",
+    userId: "",
+  );
 
   Future<String> getUserId(String email) async {
     QuerySnapshot currentUsers = await database

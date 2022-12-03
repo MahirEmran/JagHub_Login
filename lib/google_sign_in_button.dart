@@ -51,24 +51,17 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                 });
 
                 if (!userExists) {
-                  String userId = await API().getUserId(email);
-                  UserData userData = await API().getUserData(userId);
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (context) => LandingPage(
-                        user: userData,
-                      ),
+                      builder: (context) => LandingPage(),
                     ),
                   );
                 } else {
                   await _inputGradeDialog(context, user);
-                  String userId = await API().getUserId(user.email!);
-                  UserData userData = await API().getUserData(userId);
+
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (context) => LandingPage(
-                        user: userData,
-                      ),
+                      builder: (context) => LandingPage(),
                     ),
                   );
                 }
