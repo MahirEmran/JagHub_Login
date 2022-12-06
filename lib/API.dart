@@ -77,18 +77,6 @@ class API {
     return await getUserData(userId);
   }
 
-  UserData currentUser = UserData(
-    currentEvents: [],
-    pastEvents: [],
-    pastTotalPoints: [],
-    name: "",
-    email: "",
-    points: 0,
-    grade: 0,
-    profilePic: "",
-    userId: "",
-  );
-
   Future<String> getUserId(String email) async {
     QuerySnapshot currentUsers = await database
         .collection(usersCollection)
@@ -131,12 +119,12 @@ class API {
     database.collection(usersCollection).add(userInfo);
   }
 
-  Future<List<Events>> getEventList() async {
-    List<Events> events = [];
+  Future<List<Event>> getEventList() async {
+    List<Event> events = [];
     QuerySnapshot eventInfo = await database.collection(eventsCollection).get();
     for (QueryDocumentSnapshot event in eventInfo.docs) {
       events.add(
-        Events(
+        Event(
           eventId: event.id,
           title: event.get(titleKey) as String,
           description: event.get(descriptionKey) as String,
@@ -152,7 +140,7 @@ class API {
     return events;
   }
 
-  void addEvent(Events newEvent) {
+  void addEvent(Event newEvent) {
     Map<String, dynamic> eventInfo = Map();
     eventInfo[titleKey] = newEvent.title;
     eventInfo[descriptionKey] = newEvent.description;

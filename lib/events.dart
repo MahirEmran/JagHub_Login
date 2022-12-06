@@ -1,4 +1,4 @@
-class Events {
+class Event {
   late String _eventId;
   late String _title;
   late String _description;
@@ -9,7 +9,7 @@ class Events {
   late String _type;
   late int _pointReward;
 
-  Events({
+  Event({
     required String eventId,
     required String title,
     required String description,
