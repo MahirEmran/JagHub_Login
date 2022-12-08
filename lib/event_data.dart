@@ -1,4 +1,4 @@
-class Event {
+class EventData {
   late String _eventId;
   late String _title;
   late String _description;
@@ -8,8 +8,9 @@ class Event {
   late String _source;
   late String _type;
   late int _pointReward;
+  late String _qrCode;
 
-  Event({
+  EventData({
     required String eventId,
     required String title,
     required String description,
@@ -19,6 +20,7 @@ class Event {
     required String source,
     required String type,
     required int pointReward,
+    required String qrCode,
   }) {
     _eventId = eventId;
     _title = title;
@@ -29,6 +31,7 @@ class Event {
     _source = source;
     _type = type;
     _pointReward = pointReward;
+    _qrCode = qrCode;
   }
 
   String get eventId {
@@ -65,5 +68,9 @@ class Event {
 
   String get type {
     return _type;
+  }
+
+  String get qrCode {
+    return _qrCode;
   }
 }

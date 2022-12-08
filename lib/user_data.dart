@@ -9,7 +9,8 @@ class UserData {
   late List<String> _pastEvents;
   late int _points;
   late int _grade;
-  late List<int> _pastTotalPoints;
+  late Map<String, int> _pastPoints;
+  late List<String> _joinedGroups;
 
   UserData({
     required String userId,
@@ -20,7 +21,8 @@ class UserData {
     required List<String> pastEvents,
     required int points,
     required int grade,
-    required List<int> pastTotalPoints,
+    required Map<String, int> pastPoints,
+    required List<String> joinedGroups,
   }) {
     _userId = userId;
     _email = email;
@@ -30,7 +32,8 @@ class UserData {
     _pastEvents = pastEvents;
     _points = points;
     _grade = grade;
-    _pastTotalPoints = pastTotalPoints;
+    _pastPoints = pastPoints;
+    _joinedGroups = joinedGroups;
   }
 
   String get userId {
@@ -65,7 +68,11 @@ class UserData {
     return _grade;
   }
 
-  List<int> get pastTotalPoints {
-    return _pastTotalPoints;
+  Map<String, int> get pastPoints {
+    return _pastPoints;
+  }
+
+  List<String> get joinedGroups {
+    return _joinedGroups;
   }
 }
