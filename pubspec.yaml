@@ -78,7 +78,11 @@ flutter:
   fonts:
     - family: Montserrat
       fonts:
-        - asset: assets/Montserrat.ttf     
+        - asset: assets/Montserrat-Regular.ttf
+        - asset: assets/Montserrat-Medium.ttf
+        - asset: assets/Montserrat-SemiBold.ttf  
+        - asset: assets/Montserrat-Bold.ttf
+        - asset: assets/Montserrat-ExtraBold.ttf         
     - family: Rubik_bold
       fonts:
         - asset: assets/Rubik-bold.ttf

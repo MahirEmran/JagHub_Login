@@ -53,7 +53,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         color: Color.fromARGB(255, 255, 255, 255),
                         fontSize: 20,
                         fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w600,
                       ),
                       textScaleFactor: 1.25,
                     ),
