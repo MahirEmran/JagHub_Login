@@ -51,9 +51,9 @@ class _SignInScreenState extends State<SignInScreen> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Color.fromARGB(255, 255, 255, 255),
-                        fontSize: 20,
+                        fontSize: 16,
                         fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w400,
                       ),
                       textScaleFactor: 1.25,
                     ),
