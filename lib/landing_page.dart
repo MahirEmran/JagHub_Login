@@ -1,9 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mad2_login/API.dart';
+import 'package:mad2_db_dataobjects/API.dart';
 import 'package:mad2_login/authentication.dart';
 import 'package:mad2_login/sign_in_screen.dart';
-import 'package:mad2_login/user_data.dart';
+import 'package:mad2_db_dataobjects/user_data.dart';
 
 class LandingPage extends StatefulWidget {
   LandingPage({Key? key}) : super(key: key);

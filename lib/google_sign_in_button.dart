@@ -1,11 +1,11 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mad2_login/API.dart';
+import 'package:mad2_db_dataobjects/API.dart';
+
 import 'package:mad2_login/landing_page.dart';
 
 import 'authentication.dart';
-import 'user_data.dart';
+import 'package:mad2_db_dataobjects/user_data.dart';
 
 class GoogleSignInButton extends StatefulWidget {
   @override

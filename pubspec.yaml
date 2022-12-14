@@ -42,6 +42,7 @@ dependencies:
   firebase_storage: ^11.0.6
 
   google_sign_in: ^5.0.0
+  mad2_db_dataobjects: ^1.0.0+1
 
 dev_dependencies:
   flutter_test:
