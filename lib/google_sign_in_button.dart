@@ -85,7 +85,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                           fontSize: 18,
                           color: Color.fromARGB(255, 0, 0, 0),
                           fontFamily: 'Rubik_bold',
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     )

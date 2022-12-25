@@ -35,7 +35,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   children: [
                     SizedBox(height: 10),
                     Text(
-                      'MAD 2.0',
+                      'JagHub',
                       style: TextStyle(
                         color: Color.fromARGB(255, 255, 255, 255),
                         fontSize: 40,

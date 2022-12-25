@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mad2_login">
    <application
-        android:label="mad2_login"
+        android:label="JagHub"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

@@ -1,3 +1,3 @@
-# mad2_login
+# JagHub_login
 
 Handling Firebase data/retreiving data & logging the user in
