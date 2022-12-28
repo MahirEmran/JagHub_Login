@@ -17,15 +17,24 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        return android;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for android - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,43 +52,15 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBolQI02sAbs6PY5AOZWSOTEDrre7uRMxA',
-    appId: '1:621044417838:web:b4e74ee45ed4b1ba5c26bf',
-    messagingSenderId: '621044417838',
-    projectId: 'mad2-5df9e',
-    authDomain: 'mad2-5df9e.firebaseapp.com',
-    storageBucket: 'mad2-5df9e.appspot.com',
-    measurementId: 'G-L240BQKSXC',
-  );
-
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCUoP9-qo9pH4m63phBD0A7WlYcus7Vd0M',
-    appId: '1:621044417838:android:f3eedd9d94cac9215c26bf',
-    messagingSenderId: '621044417838',
-    projectId: 'mad2-5df9e',
-    storageBucket: 'mad2-5df9e.appspot.com',
-  );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAdDsN1PAYjlcleaYer0oMttt97WfMJgPA',
     appId: '1:621044417838:ios:5c9d989821d967375c26bf',
     messagingSenderId: '621044417838',
     projectId: 'mad2-5df9e',
+    databaseURL: 'https://mad2-5df9e-default-rtdb.firebaseio.com',
     storageBucket: 'mad2-5df9e.appspot.com',
-    iosClientId:
-        '621044417838-72171t6br2p83ljv6rdnhfcmt71eu3k6.apps.googleusercontent.com',
-    iosBundleId: 'com.example.mad2Login',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAdDsN1PAYjlcleaYer0oMttt97WfMJgPA',
-    appId: '1:621044417838:ios:5c9d989821d967375c26bf',
-    messagingSenderId: '621044417838',
-    projectId: 'mad2-5df9e',
-    storageBucket: 'mad2-5df9e.appspot.com',
-    iosClientId:
-        '621044417838-72171t6br2p83ljv6rdnhfcmt71eu3k6.apps.googleusercontent.com',
+    androidClientId: '621044417838-jj4up3omrko4pccn5rvuv054fmom6gla.apps.googleusercontent.com',
+    iosClientId: '621044417838-72171t6br2p83ljv6rdnhfcmt71eu3k6.apps.googleusercontent.com',
     iosBundleId: 'com.example.mad2Login',
   );
 }
