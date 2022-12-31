@@ -1,9 +1,13 @@
-name: JagHub
+name: mad2_login
 description: Login for JagHub.
 
-publish_to: 'none' 
+version: 1.0.3
 
-version: 1.0.0
+false_secrets:
+  - /android/app/google-services.json
+  - /ios/Runner/GoogleService-Info.plist
+  - /lib/firebase_options.dart
+  - /macos/Runner/GoogleService-Info.plist
 
 environment:
   sdk: '>=2.18.4 <3.0.0'
@@ -19,11 +23,9 @@ dependencies:
   firebase_auth: ^4.1.4
   cloud_firestore: ^4.1.0
   firebase_storage: ^11.0.6
-
   google_sign_in: ^5.0.0
-  mad2_db_dataobjects: ^1.0.5
-
-  mad2_browsepage: ^1.4.8
+  mad2_db_dataobjects: ^1.1.0
+  mad2_browsepage: ^1.6.2
 
 dev_dependencies:
   flutter_test:
@@ -64,5 +66,5 @@ flutter:
   assets: 
    - assets/google_logo.png
    - assets/signinscreendesign.png
-
+   - assets/DenLogo.jpg
 
