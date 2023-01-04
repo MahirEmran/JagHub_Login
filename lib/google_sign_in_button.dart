@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mad2_db_dataobjects/API.dart';
 
-import 'package:mad2_browsepage/browse_page.dart';
+import 'package:mad2_home/homepage.dart';
 
 import 'authentication.dart';
 import 'package:mad2_db_dataobjects/user_data.dart';
@@ -53,7 +53,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                 if (!userExists) {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (context) => BrowsePage(),
+                      builder: (context) => HomePage(),
                     ),
                   );
                 } else {
@@ -61,7 +61,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
 
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (context) => BrowsePage(),
+                      builder: (context) => HomePage(),
                     ),
                   );
                 }
