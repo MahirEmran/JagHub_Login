@@ -46,8 +46,9 @@ class _SignInScreenState extends State<SignInScreen> {
                       textAlign: TextAlign.center,
                       textScaleFactor: 1.25,
                     ),
+                    SizedBox(height: 5),
                     Text(
-                      'The app for tracking your club attendance and points earned',
+                      'An NCHS event, group, and points tracker that rewards you for showing your jaguar spirit',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Color.fromARGB(255, 255, 255, 255),
@@ -57,13 +58,13 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       textScaleFactor: 1.25,
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: MediaQuery.of(context).size.height * .05),
                   ],
                 ),
               ),
               Image(
                 image: AssetImage("assets/signinscreendesign.png"),
-                height: 200.0,
+                height: MediaQuery.of(context).size.height * .35,
               ),
               Expanded(
                 child: Align(

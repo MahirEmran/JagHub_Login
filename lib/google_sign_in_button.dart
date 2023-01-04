@@ -234,7 +234,8 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
           grade: dropdownvalue,
           pastPoints: currentUser.pastPoints,
           joinedGroups: currentUser.joinedGroups,
-          pendingPurchasedItems: currentUser.pendingPurchasedItems);
+          pendingPurchasedItems: currentUser.pendingPurchasedItems,
+          spendablePoints: currentUser.spendablePoints);
       API().modifyUserData(
         userId,
         modifiedUser,

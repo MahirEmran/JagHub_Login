@@ -316,28 +316,28 @@ packages:
       name: mad2_browsepage
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.6.2"
+    version: "1.7.9"
   mad2_db_dataobjects:
     dependency: "direct main"
     description:
       name: mad2_db_dataobjects
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.0"
+    version: "1.1.9"
   mad2_leaderboard:
     dependency: transitive
     description:
       name: mad2_leaderboard
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.9"
+    version: "1.2.7"
   mad2_shop:
     dependency: transitive
     description:
       name: mad2_shop
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.0"
+    version: "1.2.8"
   matcher:
     dependency: transitive
     description:
