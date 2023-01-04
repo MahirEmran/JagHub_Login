@@ -1,11 +1,11 @@
 name: mad2_login
 description: Login for JagHub.
 
-version: 1.0.3
+version: 1.0.4
 
 false_secrets:
   - /android/app/google-services.json
-  - /ios/Runner/GoogleService-Info.plist
+  - /ios/GoogleService-Info.plist
   - /lib/firebase_options.dart
   - /macos/Runner/GoogleService-Info.plist
 
@@ -19,10 +19,11 @@ dependencies:
 
 
   cupertino_icons: ^1.0.2
-  firebase_core: ^2.3.0
-  firebase_auth: ^4.1.4
-  cloud_firestore: ^4.1.0
+  firebase_core: ^2.4.0
+  firebase_auth: ^4.2.3
+  cloud_firestore: ^4.3.0
   firebase_storage: ^11.0.6
+
   google_sign_in: ^5.0.0
   mad2_db_dataobjects: ^1.1.9
   mad2_browsepage: ^1.7.9
