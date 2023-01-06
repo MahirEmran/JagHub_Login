@@ -1,7 +1,7 @@
 name: mad2_login
 description: Login for JagHub.
 
-version: 1.0.8
+version: 1.1.0
 
 false_secrets:
   - /android/app/google-services.json
@@ -25,9 +25,9 @@ dependencies:
   firebase_storage: ^11.0.6
 
   google_sign_in: ^5.0.0
-  mad2_db_dataobjects: ^1.2.1
+  mad2_db_dataobjects: 
 
-  mad2_home: ^1.0.9
+  mad2_home: 
 
 dev_dependencies:
   flutter_test:
