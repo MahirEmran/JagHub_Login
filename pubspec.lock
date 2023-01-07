@@ -603,7 +603,7 @@ packages:
       name: mad2_browsepage
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.9.5"
+    version: "1.9.6"
   mad2_db_dataobjects:
     dependency: "direct main"
     description:
@@ -631,7 +631,7 @@ packages:
       name: mad2_navbar
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.3"
+    version: "1.2.4"
   mad2_opportunities:
     dependency: transitive
     description:
