@@ -28,7 +28,7 @@ dependencies:
   mad2_db_dataobjects: 
 
   mad2_home: 
-  mad2_navbar: 
+  mad2_navbar: ^1.1.3
 
 dev_dependencies:
   flutter_test:
